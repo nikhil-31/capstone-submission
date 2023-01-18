@@ -1,0 +1,9 @@
+{
+    "yaml.schemas": {
+        "file:///Users/nikhilb/.vscode/extensions/docsmsft.docs-yaml-0.2.9/out/yaml-support/toc.schema.json": "/toc\\.yml/i",
+        "https://json.schemastore.org/yamllint.json": [
+            "file:///Users/nikhilb/udacity/capstone/cloudformation/cluster.yml",
+            "file:///Users/nikhilb/udacity/capstone/cloudformation/worker-nodes.yml"
+        ]
+    }
+}
