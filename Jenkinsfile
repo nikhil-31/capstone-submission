@@ -23,7 +23,7 @@ pipeline {
                             sh "git add ."
                             sh "git status"
                             sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
-                            sh "git log -p -1"
+                            `sh "git log -p -1"
                             sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/django-docker-kubernetes-deploy-scripts.git HEAD:master"
                         }
                     }
