@@ -18,9 +18,9 @@ pipeline {
                             sh "git config user.email nkl07ba@gmail.com"
                             sh "git config user.name Nikhil Bhaskar"
                             //sh "git switch master"
-                            sh "cat deployment.yml"
-                            sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${DOCKERTAG}+g' deployment.yaml"
-                            sh "cat deployment.yml"
+                            sh "cat polls-kube/deployment.yml"
+                            sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${DOCKERTAG}+g' polls-kube/deployment.yaml"
+                            sh "cat polls-kube/deployment.yml"
                             sh "git add ."
                             sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
                             sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/django-docker-kubernetes-deploy-scripts.git HEAD:main"
@@ -29,7 +29,6 @@ pipeline {
                 }
             }
         }
-
     }
 
 }
