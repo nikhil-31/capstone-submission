@@ -25,7 +25,7 @@ pipeline {
                             sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
                             // sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/django-docker-kubernetes-deploy-scripts.git HEAD:main"
                         
-                            sh "git remote set-url master https://${GIT_PASSWORD}@github.com/{GIT_USERNAME}/django-docker-kubernetes-deploy-scripts.git"
+                            sh "git remote set-url origin https://${GIT_PASSWORD}@github.com/{GIT_USERNAME}/django-docker-kubernetes-deploy-scripts.git"
                             sh "git push origin master"
                         }
                     }
