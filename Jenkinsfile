@@ -17,7 +17,6 @@ pipeline {
                             //def encodedPassword = URLEncoder.encode("$GIT_PASSWORD",'UTF-8')
                             sh "git config user.email nkl07ba@gmail.com"
                             sh "git config user.name Nikhil Bhaskar"
-                            //sh "git switch master"
                             sh "cat polls-kube/deployment.yml"
                             sh "sed -i 's+nikhilsuper/django-polls.*+nikhilsuper/django-polls:${DOCKERTAG}+g' polls-kube/deployment.yml"
                             sh "cat polls-kube/deployment.yml"
@@ -26,9 +25,6 @@ pipeline {
                             sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
                             sh "git log -p -1"
                             sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/django-docker-kubernetes-deploy-scripts.git HEAD:master"
-                
-                            // sh "git remote set-url origin https://${GIT_PASSWORD}@github.com/{GIT_USERNAME}/django-docker-kubernetes-deploy-scripts.git"
-                            // sh "git push origin HEAD:master"
                         }
                     }
                 }
