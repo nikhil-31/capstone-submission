@@ -24,10 +24,11 @@ pipeline {
                             sh "git add ."
                             sh "git status"
                             sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
-                            // sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/django-docker-kubernetes-deploy-scripts.git HEAD:main"
                             sh "git log -p -1"
-                            sh "git remote set-url origin https://${GIT_PASSWORD}@github.com/{GIT_USERNAME}/django-docker-kubernetes-deploy-scripts.git"
-                            sh "git push origin HEAD:master"
+                            sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/${GIT_USERNAME}/django-docker-kubernetes-deploy-scripts.git HEAD:master"
+                
+                            // sh "git remote set-url origin https://${GIT_PASSWORD}@github.com/{GIT_USERNAME}/django-docker-kubernetes-deploy-scripts.git"
+                            // sh "git push origin HEAD:master"
                         }
                     }
                 }
