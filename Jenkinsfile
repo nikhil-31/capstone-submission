@@ -19,7 +19,7 @@ pipeline {
                             sh "git config user.name Nikhil Bhaskar"
                             //sh "git switch master"
                             sh "cat polls-kube/deployment.yml"
-                            sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${DOCKERTAG}+g' polls-kube/deployment.yaml"
+                            sh "sed -i 's+nikhilsuper/django-polls.*+nikhilsuper/django-polls:${DOCKERTAG}+g' polls-kube/deployment.yml"
                             sh "cat polls-kube/deployment.yml"
                             sh "git add ."
                             sh "git commit -m 'Done by Jenkins Job changemanifest: ${env.BUILD_NUMBER}'"
